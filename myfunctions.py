@@ -52,6 +52,13 @@ def hello_world():
     ##########
     :return: None
     """
+    print("'''")
+    print('**********')
+    print()
+    print('Hello World!')
+    print()
+    print('##########')
+    print("'''")
     pass
 
 
@@ -76,6 +83,16 @@ def hello_who(who='World'):
     :param who: кого мы приветствуем, по умолчанию World
     :return: None
     """
+    print("'''")
+    print('**********')
+    print()
+    if who == None:
+        print('Hello World!')
+    else:
+        print(f'Hello {who}!')
+    print()
+    print('##########')
+    print("'''")
     pass
 
 
@@ -112,7 +129,9 @@ def pow_many(power, *args):
     :param args: любое количество цифр
     :return: результат вычисления # True -> (1 + 2)**1
     """
-    pass
+    summa = sum(list(args))
+    stepen = summa ** power
+    return stepen
 
 
 print(pow_many(1, 1, 2) == 3)  # True -> (1 + 2)**1 == 3
@@ -130,6 +149,10 @@ def print_key_val(**kwargs):
     :param kwargs: любое количество именованных параметров
     :return: None
     """
+    print("'''")
+    for i in kwargs.items():
+        print(f'{i[0]}-->{i[1]}')
+    print("'''")
     pass
 
 
@@ -155,7 +178,8 @@ def my_filter(iterable, function):
     :param function: функция фильтрации
     :return: новая отфильтрованная последовательность
     """
-    pass
+    res = list(filter(function, iterable))
+    return res
 
 
 print(my_filter([1, 2, 3, 4, 5], lambda x: x > 3) == [4, 5])  # True
